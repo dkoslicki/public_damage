@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "damage-bayes"
+version = "0.1.0"
+description = "Bayesian estimation of ancient DNA damage patterns"
+readme = "README.md"
+authors = [{name = "Sterling Wright"}, {name = "OpenAI Assistant"}]
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+    "pandas",
+    "scipy",
+    "matplotlib",
+    "numpy",
+    "pymc",
+    "arviz",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/example/damage-bayes"
+
+[project.scripts]
+"damage-bayes" = "damage_bayes.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
